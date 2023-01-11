@@ -12,7 +12,7 @@ class Student {
   }
 
     sum(): number | undefined {
-      let sum = 0;
+      let sum: number  = 0;
 
       const allGrades = [...this._testGrades, ...this._essayGrades]
 
@@ -27,18 +27,12 @@ class Student {
     }
 
     avarage(): number | undefined {
-      let sum = 0;
-      let average = 0;
+      
+      let average = this.sum()
 
-      const allGrades = [...this._testGrades, ...this._essayGrades]
-
-      allGrades.forEach(grade => { 
-        if(grade !== undefined){
-          sum = sum + grade;
-        }
-      })
-
-      average = sum / allGrades.length
+      if (average !== undefined) {
+        average = average/6;
+      }
 
 
       return average
